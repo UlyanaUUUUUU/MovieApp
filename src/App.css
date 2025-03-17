@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #cfcfcf;
+}
+
+#root {
+    width: 1010px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+
+}
+
+.MovieApp{
+
+
+}
+
+@font-face {
+    font-family: "Inter UI";
+    src: url("./fonts/Inter-UI-Regular.otf");
+    font-weight: normal;
+}
