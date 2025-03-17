@@ -4,3 +4,57 @@
     grid-template-columns: repeat(2, 451px);
     gap: 36px;
 }
+
+.movie_item {
+    display: flex;
+    width: 451px;
+    height: 279px;
+    background-color: #FFFFFF;
+    list-style:none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.movie_img {
+    width: 183px;
+    height: 281px;
+}
+
+.movie_title {
+    margin: 0;
+    font-family: Inter UI;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    vertical-align: middle;
+
+}
+
+.movie_text {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 49px;
+}
+
+.movie_overview {
+    margin: 0;
+    padding: 0;
+    font-family: Inter UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #000000;
+
+}
+
+.movie_releaseDate{
+    margin: 0;
+    padding: 0;
+    font-family: Inter UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    vertical-align: middle;
+    color: #827E7E;
+
+}
