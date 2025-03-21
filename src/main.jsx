@@ -9,9 +9,6 @@ import App from './App.jsx'
 createRoot(document.getElementById('root')).render(
 
     <>
-        <Online>
-            <App  />
-        </Online>
         <Offline>
             <div className="offline">
                 <Alert
@@ -20,6 +17,9 @@ createRoot(document.getElementById('root')).render(
                 />
             </div>
         </Offline>
+        <Online>
+            <App  />
+        </Online>
     </>,
 
   // <StrictMode>

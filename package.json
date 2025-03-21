@@ -12,6 +12,7 @@
   "dependencies": {
     "antd": "^5.24.4",
     "date-fns": "^4.1.0",
+    "lodash.debounce": "^4.0.8",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-detect-offline": "^2.4.5",
