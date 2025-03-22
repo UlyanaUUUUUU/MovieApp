@@ -10,6 +10,7 @@ export default function Search({onCreate}) {
     useEffect(() => {
         debouncedSearch.current = debounce((query) => {
             onCreate(query)
+            setLabel('')
         }, 500)
 
             return debouncedSearch.current.cancel()
@@ -24,7 +25,6 @@ export default function Search({onCreate}) {
 
     function onSubmit(e) {
         e.preventDefault()
-        setLabel('')
     }
 
     return (

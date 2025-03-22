@@ -6,6 +6,7 @@
 }
 
 .movie_item {
+    position: relative;
     display: flex;
     width: 451px;
     height: 279px;
@@ -30,6 +31,7 @@
 }
 
 .movie_text {
+    width: 228px;
     padding-left: 20px;
     padding-top: 10px;
     padding-right: 20px;
@@ -57,4 +59,51 @@
     vertical-align: middle;
     color: #827E7E;
 
+}
+
+.movie_rate{
+    position: absolute;
+    bottom: 0;
+    height: 42px;
+    margin-top: auto;
+}
+
+.movie_rate li{
+margin: 2px !important;
+}
+
+img:after {
+    content: attr(alt);
+
+    font-size: 16px;
+    font-family: FontAwesome;
+    color: rgb(100, 100, 100);
+    text-align: center;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 183px;
+    height: 100%;
+    background-color: #fff;
+}
+
+.movie_vote{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+
+}
+
+.movie_score{
+    margin: 0;
+}
+
+.movie_header{
+    display: flex;
+    justify-content: space-between;
 }
