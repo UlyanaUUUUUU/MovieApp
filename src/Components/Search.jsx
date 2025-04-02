@@ -2,19 +2,19 @@ import './Search.css'
 import {useEffect, useRef, useState} from "react";
 import debounce from 'lodash.debounce';
 
-export default function Search({onCreate}) {
+export default function Search({onCreate, isClicked}) {
 
     const [label, setLabel] = useState('')
     const debouncedSearch = useRef()
 
     useEffect(() => {
-        debouncedSearch.current = debounce((query) => {
-            onCreate(query)
-            setLabel('')
-        }, 500)
+            debouncedSearch.current = debounce((query) => {
+                onCreate(query)
+                setLabel('')
+            }, 500)
 
             return debouncedSearch.current.cancel()
-    }, [onCreate]
+        }, [onCreate]
     )
 
     function onLabelChange(e) {
@@ -28,15 +28,19 @@ export default function Search({onCreate}) {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <input
-                className="search"
-                placeholder="Type to search..."
-                type="text"
-                onChange={onLabelChange}
-                value={label}
-                autoFocus
-            />
-        </form>
+        <>
+            {!isClicked ? (
+                <form onSubmit={onSubmit}>
+                    <input
+                        className="search"
+                        placeholder="Type to search..."
+                        type="text"
+                        onChange={onLabelChange}
+                        value={label}
+                        autoFocus
+                    />
+                </form>
+            ) : null}
+        </>
     )
 }
