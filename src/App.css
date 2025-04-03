@@ -1,23 +1,22 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #cfcfcf;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #cfcfcf;
 }
 
 #root {
-    width: 1010px;
-    margin: 0 auto;
-    background-color: #FFFFFF;
-
+  width: 1010px;
+  margin: 0 auto;
+  background-color: #ffffff;
 }
 
-.MovieApp{
-padding-bottom: 17px;
-
+.MovieApp {
+  padding-bottom: 17px;
 }
 
 @font-face {
-    font-family: "Inter UI";
-    src: url("./fonts/Inter-UI-Regular.otf");
-    font-weight: normal;
+  font-family: 'Inter UI';
+  src: url('./fonts/Inter-UI-Regular.otf');
+  font-weight: normal;
 }

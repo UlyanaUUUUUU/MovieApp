@@ -1,46 +1,56 @@
-import './Search.css'
-import {useEffect, useRef, useState} from "react";
+import './Search.css';
+import { useEffect, useRef, useState } from 'react';
 import debounce from 'lodash.debounce';
+import propTypes from 'prop-types';
+import React from 'react';
 
-export default function Search({onCreate, isClicked}) {
+export default function Search({ onCreate, isClicked }) {
+  Search.defaultProps = {
+    isClicked: null,
+    onCreate: () => {},
+  };
 
-    const [label, setLabel] = useState('')
-    const debouncedSearch = useRef()
+  Search.propTypes = {
+    isClicked: propTypes.bool,
+    onCreate: propTypes.func,
+  };
 
-    useEffect(() => {
-            debouncedSearch.current = debounce((query) => {
-                onCreate(query)
-                setLabel('')
-            }, 500)
+  const [label, setLabel] = useState('');
+  const debouncedSearch = useRef();
 
-            return debouncedSearch.current.cancel()
-        }, [onCreate]
-    )
+  useEffect(() => {
+    debouncedSearch.current = debounce((query) => {
+      onCreate(query);
+      setLabel('');
+    }, 500);
 
-    function onLabelChange(e) {
-        const value = e.target.value
-        setLabel(value)
-        debouncedSearch.current(value)
-    }
+    return debouncedSearch.current.cancel();
+  }, [onCreate]);
 
-    function onSubmit(e) {
-        e.preventDefault()
-    }
+  function onLabelChange(e) {
+    const value = e.target.value;
+    setLabel(value);
+    debouncedSearch.current(value);
+  }
 
-    return (
-        <>
-            {!isClicked ? (
-                <form onSubmit={onSubmit}>
-                    <input
-                        className="search"
-                        placeholder="Type to search..."
-                        type="text"
-                        onChange={onLabelChange}
-                        value={label}
-                        autoFocus
-                    />
-                </form>
-            ) : null}
-        </>
-    )
+  function onSubmit(e) {
+    e.preventDefault();
+  }
+
+  return (
+    <>
+      {!isClicked ? (
+        <form onSubmit={onSubmit}>
+          <input
+            className="search"
+            placeholder="Type to search..."
+            type="text"
+            onChange={onLabelChange}
+            value={label}
+            autoFocus
+          />
+        </form>
+      ) : null}
+    </>
+  );
 }

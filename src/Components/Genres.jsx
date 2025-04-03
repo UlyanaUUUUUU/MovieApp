@@ -1,7 +1,7 @@
-import {useContext, createContext} from "react";
+import { useContext, createContext } from 'react';
 
-export const GenresContext = createContext()
+export const GenresContext = createContext();
 
-export  function useGenres() {
-    return useContext(GenresContext)
+export function useGenres() {
+  return useContext(GenresContext);
 }

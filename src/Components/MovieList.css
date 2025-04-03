@@ -1,135 +1,131 @@
 .movie_list {
-    padding: 21px 32px;
-    display: grid;
-    grid-template-columns: repeat(2, 451px);
-    gap: 36px;
+  padding: 21px 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 451px);
+  gap: 36px;
 }
 
 .movie_item {
-    position: relative;
-    display: flex;
-    width: 451px;
-    height: 279px;
-    background-color: #FFFFFF;
-    list-style: none;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: flex;
+  width: 451px;
+  height: 279px;
+  background-color: #ffffff;
+  list-style: none;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .movie_img {
-    width: 183px;
-    height: 281px;
+  width: 183px;
+  height: 281px;
 }
 
 .movie_title {
-    margin: 0;
-    font-family: Inter UI;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-    vertical-align: middle;
-
+  margin: 0;
+  font-family: Inter UI;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  vertical-align: middle;
 }
 
 .movie_text {
-    width: 228px;
-    padding-left: 20px;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 49px;
+  width: 228px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 49px;
 }
 
 .movie_overview {
-    margin: 0;
-    padding: 0;
-    font-family: Inter UI;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 22px;
-    color: #000000;
-
+  margin: 0;
+  padding: 0;
+  font-family: Inter UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: #000000;
 }
 
 .movie_releaseDate {
-    margin: 0;
-    padding: 0;
-    font-family: Inter UI;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 22px;
-    vertical-align: middle;
-    color: #827E7E;
-
+  margin: 0;
+  padding: 0;
+  font-family: Inter UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  vertical-align: middle;
+  color: #827e7e;
 }
 
 .movie_rate {
-    position: absolute;
-    bottom: 0;
-    height: 42px;
-    margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  height: 42px;
+  margin-top: auto;
 }
 
 .movie_rate li {
-    margin: 2px !important;
+  margin: 2px !important;
 }
 
 img:after {
-    content: attr(alt);
+  content: attr(alt);
 
-    font-size: 16px;
-    font-family: FontAwesome;
-    color: rgb(100, 100, 100);
-    text-align: center;
-    display: block;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    width: 183px;
-    height: 100%;
-    background-color: #fff;
+  font-size: 16px;
+  font-family: FontAwesome;
+  color: rgb(100, 100, 100);
+  text-align: center;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 183px;
+  height: 100%;
+  background-color: #fff;
 }
 
 .movie_vote {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    flex-shrink: 0;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .movie_score {
-    margin: 0;
+  margin: 0;
 }
 
 .movie_header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .genres {
-    display: flex;
-    list-style-type: none;
-    gap: 8px;
-    padding: 0;
-    align-items: flex-start;
+  display: flex;
+  list-style-type: none;
+  gap: 8px;
+  padding: 0;
+  align-items: flex-start;
 }
 
 .genre_item {
-    font-family: Inter UI;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 100%;
-    color: rgba(0, 0, 0, 0.65);
-    background-color: rgba(250, 250, 250, 1);
-    border: 1px solid rgba(217, 217, 217, 1);
-    width: auto;
-    height: 17px;
-    border-radius: 2px;
-    text-align: center;
-    padding-top: 3px;
-    padding-left: 2px;
-    padding-right: 2px;
+  font-family: Inter UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(250, 250, 250, 1);
+  border: 1px solid rgba(217, 217, 217, 1);
+  width: auto;
+  height: 17px;
+  border-radius: 2px;
+  text-align: center;
+  padding-top: 3px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
