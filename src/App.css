@@ -20,3 +20,9 @@ body {
   src: url('./fonts/Inter-UI-Regular.otf');
   font-weight: normal;
 }
+
+@media (max-width: 430px) {
+  #root {
+    width: 420px;
+  }
+}

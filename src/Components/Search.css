@@ -20,3 +20,9 @@ form {
 .search:focus-visible {
   outline: none;
 }
+
+@media (max-width: 430px) {
+  .search {
+    width: 388px;
+  }
+}

@@ -129,3 +129,44 @@ img:after {
   padding-left: 2px;
   padding-right: 2px;
 }
+
+@media (max-width: 430px) {
+  .movie_list {
+    grid-template-columns: repeat(1, 388px);
+    gap: 20px;
+    padding: 10px 16px;
+  }
+
+  .movie_item {
+    display: block;
+    width: 388px;
+    height: 245px;
+    padding: 6px 10px;
+  }
+
+  .movie_img {
+    float: left;
+    width: 60px;
+    height: 91px;
+    margin-right: 13px;
+  }
+
+  .movie_text {
+    width: auto;
+    padding-left: 10px;
+    padding-top: 0;
+    padding-right: 10px;
+    padding-bottom: 0px;
+  }
+
+  .movie_rate {
+    margin-left: 135px;
+  }
+
+  img:after {
+    width: 60px;
+    height: 91px;
+    margin-left: 10px;
+    margin-top: 6px;
+  }
+}
