@@ -6,6 +6,7 @@ import { useGenres } from './Genres.jsx';
 import { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 import React from 'react';
+import { Pagination } from 'antd';
 
 export default function MovieList({ movieList, loading, error, isClicked, guestSessionId }) {
   MovieList.defaultProps = {
@@ -18,13 +19,23 @@ export default function MovieList({ movieList, loading, error, isClicked, guestS
 
   MovieList.propTypes = {
     isClicked: propTypes.bool,
-    guestSessionId: propTypes.object,
+    guestSessionId: propTypes.bool,
     movieList: propTypes.array,
     loading: propTypes.object,
     error: propTypes.object,
   };
   const genres = useGenres();
   const [rating, setRating] = useState({});
+  const [currentRatedPage, setCurrentRatedPage] = useState(1);
+  const moviesPerPage = 24; // Количество фильмов на странице
+
+  const indexOfLastMovie = currentRatedPage * moviesPerPage;
+  const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
+  const currentRatedMovies = Object.values(rating).slice(indexOfFirstMovie, indexOfLastMovie);
+
+  const handleRatedPageChange = (page) => {
+    setCurrentRatedPage(page);
+  };
 
   useEffect(() => {
     const savedRating = localStorage.getItem('movieRating');
@@ -135,7 +146,8 @@ export default function MovieList({ movieList, loading, error, isClicked, guestS
   }
 
   if (isClicked) {
-    elements = Object.values(rating).map((movie) => {
+    // totalPages(Object.values(rating).length)
+    elements = currentRatedMovies.map((movie) => {
       return (
         <li className="movie_item" key={movie.id}>
           <img
@@ -173,5 +185,19 @@ export default function MovieList({ movieList, loading, error, isClicked, guestS
     });
   }
 
-  return <ul className="movie_list">{elements}</ul>;
+  return (
+    <>
+      <ul className="movie_list">{elements}</ul>
+
+      {isClicked && (
+        <Pagination
+          pageSize={moviesPerPage}
+          total={Object.values(rating).length}
+          current={currentRatedPage}
+          onChange={handleRatedPageChange}
+          align="center"
+        />
+      )}
+    </>
+  );
 }

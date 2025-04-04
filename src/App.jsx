@@ -127,7 +127,15 @@ export default function App() {
           isClicked={isClicked}
           guestSessionId={guestSessionId}
         />
-        <Pagination pageSize={12} total={totalPages} current={currentPage} onChange={handlePageChange} align="center" />
+        {!isClicked && (
+          <Pagination
+            pageSize={24}
+            total={totalPages}
+            current={currentPage}
+            onChange={handlePageChange}
+            align="center"
+          />
+        )}
       </section>
     </GenresContext.Provider>
   );
